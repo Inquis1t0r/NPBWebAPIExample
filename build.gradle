@@ -19,12 +19,12 @@ repositories {
 }
 
 ext {
-    set('vaadinVersion', "14.0.3")
+   // set('vaadinVersion', "14.0.3")
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jersey'
-    implementation 'com.vaadin:vaadin-spring-boot-starter'
+    //implementation 'com.vaadin:vaadin-spring-boot-starter'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -32,6 +32,6 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
+       // mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
     }
 }
