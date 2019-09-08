@@ -1,4 +1,4 @@
-package pl.inquis1t0r.nbpwebapi.fetcher;
+package pl.inquis1t0r.nbpwebapi.fetcher.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
