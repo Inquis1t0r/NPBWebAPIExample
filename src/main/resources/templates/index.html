@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>Rates:</h1>
+<table  border="1">
+<tbody>
+    <tr th:each="rate: ${ratesList}">
+        <td th:text="${rate.no}" />
+        <td th:text="${rate.bid}" />
+        <td th:text="${rate.ask}" />
+    </tr>
+</table>
+</tbody>
 </body>
 </html>
