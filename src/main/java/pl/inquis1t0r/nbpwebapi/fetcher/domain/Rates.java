@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -11,6 +12,21 @@ import java.util.List;
 public class Rates {
     @JsonProperty("rates")
     private List<Rates> ratesList;
+    private BigDecimal bid;
+    private BigDecimal ask;
+    private String no;
+
+    MathContext mc = new MathContext(4);
+
+    public BigDecimal getDifference() {
+        return bid.subtract(ask, mc).abs();
+    }
+
+    public void setDifference(BigDecimal difference) {
+        this.difference = bid.subtract(ask, mc).abs();
+    }
+
+    private BigDecimal difference;
 
     public List<Rates> getRatesList() {
         return ratesList;
@@ -43,9 +59,5 @@ public class Rates {
     public void setNo(String no) {
         this.no = no;
     }
-
-    private BigDecimal bid;
-    private BigDecimal ask;
-    private String no;
 
 }
