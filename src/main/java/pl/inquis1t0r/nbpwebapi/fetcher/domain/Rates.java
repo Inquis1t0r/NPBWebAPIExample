@@ -6,19 +6,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Rates {
     @JsonProperty("rates")
-    private BigDecimal bid;
-    private BigDecimal ask;
-    private String no;
-    private List<Rates> rates;
+    private List<Rates> ratesList;
 
-    public List<Rates> getRates() {
-        return rates;
+    public List<Rates> getRatesList() {
+        return ratesList;
     }
 
-    public void setRates(List<Rates> rates) {
-        this.rates = rates;
+    public void setRatesList(List<Rates> ratesList) {
+        this.ratesList = ratesList;
     }
 
     public BigDecimal getBid() {
@@ -44,4 +43,9 @@ public class Rates {
     public void setNo(String no) {
         this.no = no;
     }
+
+    private BigDecimal bid;
+    private BigDecimal ask;
+    private String no;
+
 }
