@@ -18,10 +18,10 @@ public class WebController {
     RestTemplate restTemplate = new RestTemplate();
 
     private String format = "/?format=json";
-    private String URL = "http://api.nbp.pl/api/exchangerates/rates/c/usd/";
+    private String url = "http://api.nbp.pl/api/exchangerates/rates/c/usd/";
     private String dateToday = "2019-09-09";
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping("/")
     public String showForm(Model model) {
         model.addAttribute("message", new StartTime());
         return "form";
@@ -30,9 +30,13 @@ public class WebController {
     @PostMapping("/showResult")
     public String index(@ModelAttribute(value = "messageBody") String messageBody, BindingResult bindingResult, Model model) {
         System.out.println("messageBody: " + messageBody);
+        //List<Rates> ratesList = restTemplate
+            //    .getForObject(url+messageBody+"/"+dateToday+format, Rates.class)
+              //  .getRatesList();
         List<Rates> ratesList = restTemplate
-                .getForObject(URL+messageBody+"/"+dateToday+format, Rates.class)
+                .getForObject("http://api.nbp.pl/api/exchangerates/rates/c/usd/2012-09-01/2013-01-31/?format=json", Rates.class)
                 .getRatesList();
+
         model.addAttribute("ratesList",  ratesList);
         return "result";
     }
