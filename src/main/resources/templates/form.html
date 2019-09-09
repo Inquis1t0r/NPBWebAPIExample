@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/showResult}" th:object="${message}" method="post">
+    <table>
+        <tr>
+            <th>Set start date:</th>
+        </tr>
+        <tr>
+            <td>
+                <label>Date Time: </label><input type="datetime-local" th:field="*{messageBody}"/>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="btnSubmit" value="Send desired date"></td>
+        </tr>
+    </table>
+</body>
+</html>
