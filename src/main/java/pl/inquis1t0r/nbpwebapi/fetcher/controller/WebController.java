@@ -30,11 +30,8 @@ public class WebController {
     @PostMapping("/showResult")
     public String index(@ModelAttribute(value = "messageBody") String messageBody, BindingResult bindingResult, Model model) {
         System.out.println("messageBody: " + messageBody);
-        //List<Rates> ratesList = restTemplate
-            //    .getForObject(url+messageBody+"/"+dateToday+format, Rates.class)
-              //  .getRatesList();
         List<Rates> ratesList = restTemplate
-                .getForObject("http://api.nbp.pl/api/exchangerates/rates/c/usd/2012-09-01/2013-01-31/?format=json", Rates.class)
+                .getForObject(url+messageBody+"/"+dateToday+format, Rates.class)
                 .getRatesList();
 
         model.addAttribute("ratesList",  ratesList);
