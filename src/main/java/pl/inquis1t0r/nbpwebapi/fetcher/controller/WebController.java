@@ -11,12 +11,9 @@ import pl.inquis1t0r.nbpwebapi.fetcher.domain.Rates;
 
 import java.util.List;
 
-
-
 @Controller
 public class WebController {
-    RestTemplate restTemplate = new RestTemplate();
-
+    private RestTemplate restTemplate = new RestTemplate();
     private String format = "/?format=json";
     private String url = "http://api.nbp.pl/api/exchangerates/rates/c/usd/";
     private String dateToday = "2019-09-09";
@@ -37,6 +34,4 @@ public class WebController {
         model.addAttribute("ratesList",  ratesList);
         return "result";
     }
-
-
 }
