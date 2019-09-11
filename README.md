@@ -7,7 +7,7 @@ Simple NBP.pl Web API fetcher for USD bid and ask rates.
 Clone repository and then run bootRun Gradle Task from IDE or console: ./gradlew bootRun. Wait for message like:
 
 ```
-Started NbpwebapiApplication in 3.532 seconds (JVM running for 3.923
+Started NbpwebapiApplication in 3.532 seconds (JVM running for 3.923)
 ```
 Project should be accessible at [localhost:8080](http://localhost:8080/).
 
