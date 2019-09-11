@@ -9,6 +9,6 @@ Clone repository and then run bootRun Gradle Task from IDE or console: ./gradlew
 ```
 Started NbpwebapiApplication in 3.532 seconds (JVM running for 3.923
 ```
-Project should be accessible at http://localhost:8080/.
+Project should be accessible at [localhost:8080](http://localhost:8080/).
 
-You can also check live demo: https://nbpwebapiapplication.herokuapp.com/
+You can also check live demo: [nbpwebapiapplication.herokuapp.com](https://nbpwebapiapplication.herokuapp.com/)
